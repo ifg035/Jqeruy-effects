@@ -22,7 +22,7 @@
         <button class="goBtn">Go</button>
     </div>
     <div class="airplane_wrap">
-        <img id="airplane"src="airplane.png" width="100" alt="비행기">
+        <img class="airplane"src="airplane.png" width="100" alt="비행기">
     </div>
     <script>
         $(function(){
@@ -38,8 +38,8 @@
             //         "swing"
             //     )
             // })
-
-            var count1 = 1;
+            var airplane = $(".airplane");
+            var count = 1;
             $(".btn_wrap button").on("click",function(){
                 if(!airplane.is(":animated")){
                     if($(this).hasClass("backBtn")){
@@ -48,7 +48,7 @@
                             count = 1;
                             return false;
                         }
-                        airplane.animate({marginLeft: "+=10%"},300);
+                        airplane.animate({marginLeft: "-=10%"},300);
                     } else {
                         count++;
                         if(count > 10){
