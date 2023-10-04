@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqeruy effect </title>
+</head>
+<body>
+    <h1>jQeury 효과 실습</h1>
+    <h2>animate() 메소드(p.294)</h2>
+    <div class="airplane">
+        <img src="airplane.png" width="100" alt="비행기" />
+    </div>
+    <button class="btn1">500px이동</button>
+    <button class="btn2">50px이동</button>
+    <script>
+        $(function(){
+            $(".btn1").on("click",function(){
+                if(
+                    parseInt($(".airplane img").css("marginLeft")) > $(window).innerWidth()
+                ){
+                    $(".airplane img").css("margin-Left",0);
+                } else {
+                    $(".airplane img").animate(
+                     {
+                         "margin-left" : "+=500px",
+                     },
+                     1000,
+                     "swing"
+                    ),
+                }
+            });
+            $(".btn2").on("click".function() {
+                $(".airplane img").animate(
+                    {
+                        "margin-left" : "+=50px",
+                    },
+                    1000, 
+                    "swing",
+                    function(){
+                        alert("500픽셀 이동완료");
+                    }
+                )
+            })
+        });
+    </script>
+</body>
+</html>

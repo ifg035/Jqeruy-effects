@@ -28,7 +28,7 @@
         <button class="btn2">fadeIn</button>
     </div>
     <div>
-        <button class="btn3">toggleSlide</button>
+        <button class="btn3">slideToggle</button>
     </div>
     <div>
         <button class="btn4">fadeTo(0.3)</button>
@@ -46,11 +46,33 @@
     <script>
         $(function(){
             // slideUp 버튼제어
+            $(".btn1").on("click",function(){
+                $(".box").slideUp(1000,"linear",function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                })
+            })
             // fadeIn 버튼제어
+            $(".btn2").on("click",function(){
+                $(".box").fadeIn(1000, "linear",function(){
+                    $(".btn1").show();
+                    $(".btn2").hide();
+                })
+            })
             // toggleSlide 버튼제어
+            $(".btn3").on("click",function(){
+                $(".box").slideToggle(1000,"linear");
+                });
+            })
             // fadeTo(0.3) 버튼제어
+            $(".btn4").on("click",function(){
+                $(".box").fadeTo(200,0.3);
+            })
             // fadeTo(1) 버튼제어
-        })
+            $(".btn5").on("click",function(){
+                $(".box").fadeTo("fast",0.3);
+            })
+      
     </script>
 </body>
 </html>
